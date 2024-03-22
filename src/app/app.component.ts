@@ -9,35 +9,15 @@ import { Component } from "@angular/core";
 		<h3>Styles And Bootstrap - Sample</h3>
 		<div class="mb-3">
 			📖 More about NgClass and NgStyle:
-			<a
-				href="https://codecraft.tv/courses/angular/built-in-directives/ngstyle-and-ngclass/"
-				target="_blank"
-				>ngstyle-and-ngclass</a
-			>
+			<a href="https://codecraft.tv/courses/angular/built-in-directives/ngstyle-and-ngclass/" target="_blank">
+				ngstyle-and-ngclass
+			</a>
 		</div>
 		<div class="d-flex align-items-center justify-content-start">
 			<span>Click the buttons below to change the alert type:&nbsp;</span>
-			<button
-				type="button"
-				class="me-3"
-				(click)="onChangeAlertType('primary')"
-			>
-				Primary
-			</button>
-			<button
-				type="button"
-				class="me-3"
-				(click)="onChangeAlertType('danger')"
-			>
-				Danger
-			</button>
-			<button
-				type="button"
-				class="me-3"
-				(click)="onChangeAlertType('success')"
-			>
-				Success
-			</button>
+			<button type="button" class="me-3" (click)="onChangeAlertType('primary')">Primary</button>
+			<button type="button" class="me-3" (click)="onChangeAlertType('danger')">Danger</button>
+			<button type="button" class="me-3" (click)="onChangeAlertType('success')">Success</button>
 		</div>
 
 		<h4 class="mt-3">Dynamic class names</h4>
@@ -45,15 +25,14 @@ import { Component } from "@angular/core";
 			class="my-alert"
 			[class.danger]="alert.type === 'danger'"
 			[class.success]="alert.type === 'success'"
-			[class.primary]="alert.type === 'primary'"
-		>
+			[class.primary]="alert.type === 'primary'">
 			{{ alert.message }}
 		</div>
 
 		<h4 class="mt-3">Dynamic attribute class</h4>
 		<div class="mb-3">
-			This case is not suggested, since every mouse/keyboard event
-			triggers change detection and the evaluation of the getClass method
+			This case is not suggested, since every mouse/keyboard event triggers change detection and the evaluation of
+			the getClass method
 		</div>
 		<div [class]="getClass()">
 			{{ alert.message }}
@@ -61,34 +40,22 @@ import { Component } from "@angular/core";
 
 		<h4 class="mt-3">NgClass</h4>
 		<div class="mb-3">
-			NgClass is a Directive that should be imported in the "imports"
-			array in the metadata. If more conditions are satisfied, the
-			relative classes will be applied together; in case of overlapping of
-			styles, the one with more SPECIFICITY will be applied over the
-			others. More about specificity concept:
+			NgClass is a Directive that should be imported in the "imports" array in the metadata. If more conditions
+			are satisfied, the relative classes will be applied together; in case of overlapping of styles, the one with
+			more SPECIFICITY will be applied over the others. More about specificity concept:
 			<li>
 				📖
-				<a
-					href="https://www.w3schools.com/css/css_specificity.asp"
-					target="_blank"
-					>w3schools</a
-				>
+				<a href="https://www.w3schools.com/css/css_specificity.asp" target="_blank">w3schools</a>
 			</li>
 			<li>
 				📖
-				<a
-					href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity"
-					target="_blank"
-					>developer.mozilla</a
-				>
+				<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity" target="_blank">
+					developer.mozilla
+				</a>
 			</li>
 			<li>
 				📖
-				<a
-					href="https://css-tricks.com/specifics-on-css-specificity/"
-					target="_blank"
-					>css-tricks</a
-				>
+				<a href="https://css-tricks.com/specifics-on-css-specificity/" target="_blank">css-tricks</a>
 			</li>
 		</div>
 		<div
@@ -97,26 +64,22 @@ import { Component } from "@angular/core";
 				primary: alert.type === 'primary',
 				danger: alert.type === 'danger',
 				success: alert.type === 'success'
-			}"
-		>
+			}">
 			{{ alert.message }}
 		</div>
 
 		<h4 class="mt-3">Inline styles</h4>
 		<div class="mb-3">
-			The directive style can be concatenate with css properties and
-			bounded to a property through data binding. Sometimes, the single
-			css property is not enough, as in the case of fontSize, width, etc,
-			where a unit of measure should be specified: a suffix can be
-			concatenated after the css property and in this case we talk about
-			"suffix operator"
+			The directive style can be concatenate with css properties and bounded to a property through data binding.
+			Sometimes, the single css property is not enough, as in the case of fontSize, width, etc, where a unit of
+			measure should be specified: a suffix can be concatenated after the css property and in this case we talk
+			about "suffix operator"
 		</div>
 		<div
 			class="my-alert"
 			[style.background-color]="alert.backgroundColor"
 			[style.color]="alert.color"
-			[style.width.px]="alert.width"
-		>
+			[style.width.px]="alert.width">
 			{{ alert.message }}
 		</div>
 
@@ -131,9 +94,8 @@ import { Component } from "@angular/core";
 			[ngClass]="{
 				'alert-primary': alert.type === 'primary',
 				'alert-danger': alert.type === 'danger',
-				'alert-success': alert.type === 'success',
-				}"
-		>
+				'alert-success': alert.type === 'success'
+			}">
 			{{ alert.message }} - {{ alert.type }}
 		</div>
 	`,
