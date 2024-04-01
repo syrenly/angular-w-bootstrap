@@ -1,0 +1,35 @@
+:host {
+	display: block;
+	padding: 1rem;
+}
+button {
+	background-color: #0e9827;
+	border: none;
+	border-radius: 16px;
+	color: white;
+	padding: 8px 16px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 14px;
+	&:hover {
+		background-color: #013d0c;
+	}
+}
+.my-alert {
+	padding: 20px;
+	margin-top: 10px;
+	border-radius: 10px;
+}
+.primary {
+	background-color: #2196f3;
+	color: white;
+}
+.danger {
+	background-color: #f44336;
+	color: white;
+}
+.success {
+	background-color: #04aa6d;
+	color: black;
+}
