@@ -31,7 +31,7 @@
 
 <h4 class="mt-3">Dynamic class names</h4>
 <div
-	class="my-alert"
+	class="my-alert dynamic-class-name"
 	[class.danger]="alert.type === 'danger'"
 	[class.success]="alert.type === 'success'"
 	[class.primary]="alert.type === 'primary'">
@@ -43,7 +43,9 @@
 	This case is not suggested, since every mouse/keyboard event triggers change detection and the evaluation of
 	the getClass method
  -->
-<div [class]="getClass()">
+<div
+	[class]="getClass()"
+	class="dynamic-attribute-class">
 	{{ alert.message }}
 </div>
 
@@ -76,7 +78,7 @@
 	</a>
 </li>
 <div
-	class="my-alert"
+	class="my-alert ng-class"
 	[ngClass]="{
 		primary: alert.type === 'primary',
 		danger: alert.type === 'danger',
@@ -93,7 +95,7 @@
 	about "suffix operator"
  -->
 <div
-	class="my-alert"
+	class="my-alert inline-styles"
 	[style.background-color]="alert.backgroundColor"
 	[style.color]="alert.color"
 	[style.width.px]="alert.width">
@@ -102,7 +104,7 @@
 
 <h4 class="mt-3">NgStyle</h4>
 <div
-	class="my-alert"
+	class="my-alert ng-styles"
 	[ngStyle]="styles">
 	{{ text }}
 </div>
