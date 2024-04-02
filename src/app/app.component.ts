@@ -1,12 +1,7 @@
 import { NgClass, NgStyle } from "@angular/common";
 import { Component } from "@angular/core";
-
-const BLUE = "#2196f3";
-const GREEN = "#04aa6d";
-const RED = "#f44336";
-const WHITE = "#FFF";
-const BLACK = "#000";
-const YELLOW = "#ff9800";
+import { BLACK, BLUE, DEFAULT_ALERT, DEFAULT_STYLE, GREEN, RED, WHITE, YELLOW } from "./consts";
+import { AlertType, IAlert, IAlertStyle } from "./types";
 
 @Component({
 	selector: "app-root",
@@ -17,29 +12,9 @@ const YELLOW = "#ff9800";
 })
 export class AppComponent {
 	/**	The alert to be shown */
-	alert: {
-		message: string;
-		type: "primary" | "success" | "danger" | "unknown";
-		width: number;
-		backgroundColor: string;
-		color: string;
-	} = {
-		message: "default message",
-		type: "primary",
-		width: 100,
-		backgroundColor: BLUE,
-		color: WHITE,
-	};
+	alert: IAlert = DEFAULT_ALERT;
 	/** Additional styles to be used with NgStyle directive */
-	styles: {
-		backgroundColor: string;
-		color: string;
-		fontSize: string;
-	} = {
-		backgroundColor: YELLOW,
-		color: WHITE,
-		fontSize: "100px",
-	};
+	styles: IAlertStyle = DEFAULT_STYLE;
 	/** A default text to be used in an alert */
 	text = "Hello Styles";
 	/** Retrieve dynamically alert classes, based on the alert type */
@@ -58,7 +33,7 @@ export class AppComponent {
 	 * Change the alert style
 	 * @param type the flavour of the alert, based on the priority/severity.
 	 */
-	onChangeAlertType(type: "danger" | "success" | "primary"): void {
+	onChangeAlertType(type: AlertType): void {
 		let alert = null;
 		switch (type) {
 			case "primary": {
@@ -105,8 +80,10 @@ export class AppComponent {
 		}
 		this.alert = alert;
 	}
-
-	onClickStylesButton(type: "danger" | "success" | "primary"): void {
+	/**
+	 * Change the alert style based on type
+	 */
+	onClickStylesButton(type: AlertType): void {
 		let styles = null;
 		switch (type) {
 			case "primary": {
