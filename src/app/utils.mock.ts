@@ -1,3 +1,5 @@
+import { BLUE, GREEN, RED, YELLOW } from "./consts";
+
 export function hexToRGB(hexColor: string): string {
 	// Remove the "#" if it's present
 	hexColor = hexColor.replace(/^#/, "");
@@ -10,3 +12,8 @@ export function hexToRGB(hexColor: string): string {
 	// Return the RGB value
 	return `rgb(${red}, ${green}, ${blue})`;
 }
+
+export const blueRgb = hexToRGB(BLUE);
+export const yellowRgb = hexToRGB(YELLOW);
+export const redRgb = hexToRGB(RED);
+export const greenRgb = hexToRGB(GREEN);
