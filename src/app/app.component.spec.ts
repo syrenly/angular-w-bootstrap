@@ -19,36 +19,25 @@ describe("AppComponent", (): void => {
 	it("should create the app", (): void => {
 		expect(component).toBeTruthy();
 	});
-
-	describe("should set default colors", (): void => {
-		it("alerts with class .my-alert", (): void => {
-			const alerts: DebugElement[] = fixture.debugElement.queryAll(By.css(".my-alert"));
-			alerts.forEach(al => {
+	it("should set default colors to alerts with class .my-alert", (): void => {
+		const alerts: DebugElement[] = fixture.debugElement.queryAll(By.css(".my-alert"));
+		alerts.forEach(al => {
+			const computedStyle = getComputedStyle(al.nativeElement);
+			if (al.classes["ng-styles"]) {
 				const computedStyle = getComputedStyle(al.nativeElement);
-				expect(computedStyle.backgroundColor).toBe(blueRgb);
-			});
-		});
-		it("alert with class .ng-styles", (): void => {
-			const alert: DebugElement = fixture.debugElement.query(By.css(".ng-styles"));
-			const computedStyle = getComputedStyle(alert.nativeElement);
-			expect(computedStyle.backgroundColor).toBe(yellowRgb);
+				expect(computedStyle.backgroundColor).toBe(yellowRgb);
+				return;
+			}
+			expect(computedStyle.backgroundColor).toBe(blueRgb);
 		});
 	});
-	describe("should set default text", (): void => {
-		it("alerts with class .my-alert", (): void => {
-			const alerts: DebugElement[] = fixture.debugElement.queryAll(By.css(".my-alert"));
-			alerts.forEach(al => {
-				const textContent = al.nativeElement.textContent.trim();
-				expect(textContent).toContain("default message");
-			});
-		});
-		it("alert with class .ng-styles", (): void => {
-			const alert: DebugElement = fixture.debugElement.query(By.css(".ng-styles"));
-			const textContent = alert.nativeElement.textContent.trim();
-			expect(textContent).toContain("Hello Styles");
+	it("should set default text to alerts with class .my-alert", (): void => {
+		const alerts: DebugElement[] = fixture.debugElement.queryAll(By.css(".my-alert"));
+		alerts.forEach(al => {
+			const textContent = al.nativeElement.textContent.trim();
+			expect(textContent).toContain("default message");
 		});
 	});
-
 	it("should set primary alert", (done: DoneFn): void => {
 		dispatchButtonEvent(0, fixture).then((): void => {
 			const alerts: DebugElement[] = fixture.debugElement.queryAll(By.css(".my-alert"));
@@ -83,6 +72,31 @@ describe("AppComponent", (): void => {
 				expect(textContent).toContain("Oh, yeah!");
 			});
 			done();
+		});
+	});
+	describe("should test #getClass", (): void => {
+		let classes = "";
+		beforeEach((): void => {
+			classes = "";
+		});
+		it("case default", (): void => {
+			classes = component.getClass();
+			expect(classes).toBe("my-alert primary");
+		});
+		it("case primary", (): void => {
+			component.alert.type = "primary";
+			classes = component.getClass();
+			expect(classes).toBe("my-alert primary");
+		});
+		it("case danger", (): void => {
+			component.alert.type = "danger";
+			classes = component.getClass();
+			expect(classes).toBe("my-alert danger");
+		});
+		it("case success", (): void => {
+			component.alert.type = "success";
+			classes = component.getClass();
+			expect(classes).toBe("my-alert success");
 		});
 	});
 });

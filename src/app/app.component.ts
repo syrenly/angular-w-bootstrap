@@ -15,8 +15,6 @@ export class AppComponent {
 	alert: IAlert = DEFAULT_ALERT;
 	/** Additional styles to be used with NgStyle directive */
 	styles: IAlertStyle = DEFAULT_STYLE;
-	/** A default text to be used in an alert */
-	text = "Hello Styles";
 	/** Retrieve dynamically alert classes, based on the alert type */
 	getClass(): "my-alert danger" | "my-alert success" | "my-alert primary" {
 		switch (this.alert.type) {
@@ -29,11 +27,16 @@ export class AppComponent {
 				return "my-alert primary";
 		}
 	}
+	/** When a button is clicked, use the @param type to trigger changes in classes, styles and alerts */
+	onClickButton(type: AlertType): void {
+		this.onChangeAlertType(type);
+		this.onChangeStyles(type);
+	}
 	/**
 	 * Change the alert style
 	 * @param type the flavour of the alert, based on the priority/severity.
 	 */
-	onChangeAlertType(type: AlertType): void {
+	private onChangeAlertType(type: AlertType): void {
 		let alert = null;
 		switch (type) {
 			case "primary": {
@@ -54,7 +57,6 @@ export class AppComponent {
 					backgroundColor: GREEN,
 					color: BLACK,
 				};
-
 				break;
 			}
 			case "danger": {
@@ -83,7 +85,7 @@ export class AppComponent {
 	/**
 	 * Change the alert style based on type
 	 */
-	onClickStylesButton(type: AlertType): void {
+	private onChangeStyles(type: AlertType): void {
 		let styles = null;
 		switch (type) {
 			case "primary": {
