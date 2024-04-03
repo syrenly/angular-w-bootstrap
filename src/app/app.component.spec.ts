@@ -2,6 +2,7 @@ import { DebugElement } from "@angular/core";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { By } from "@angular/platform-browser";
 import { AppComponent } from "./app.component";
+import { BLUE, WHITE } from "./consts";
 import { blueRgb, greenRgb, redRgb, yellowRgb } from "./utils.mock";
 
 describe("AppComponent", (): void => {
@@ -76,8 +77,16 @@ describe("AppComponent", (): void => {
 	});
 	describe("should test #getClass", (): void => {
 		let classes = "";
+
 		beforeEach((): void => {
 			classes = "";
+			component.alert = {
+				message: "Hello!",
+				type: "unknown",
+				width: 100,
+				backgroundColor: BLUE,
+				color: WHITE,
+			};
 		});
 		it("case default", (): void => {
 			classes = component.getClass();

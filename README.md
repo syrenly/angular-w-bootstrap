@@ -1,12 +1,12 @@
 # AngularWBootstrap
 
-👋 Hi, I’m @syrenly and welcome to angular-w-bootstrap repo! 
+👋 Hi, I’m @syrenly and welcome to angular-w-bootstrap repo!
 
 This is sample app that uses Bootstrap framework, NgClass and NgStyle directives, class dynamic attributes, suffix operators, inline styles.
 
-⚗️ Unit test implemented.
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2 and it is currently at version 17.3.1.
+
+⚗️ Unit test implemented.
 
 ## Development server
 
@@ -23,6 +23,17 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+### Last code coverage
+
+```
+=============================== Coverage summary ===============================
+Statements   : 91.83% ( 45/49 )
+Branches     : 83.33% ( 10/12 )
+Functions    : 100% ( 6/6 )
+Lines        : 91.66% ( 44/48 )
+================================================================================
+```
 
 ## Running end-to-end tests
 
