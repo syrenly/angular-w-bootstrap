@@ -26,6 +26,8 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ### Last code coverage
 
+Run `ng test --no-watch --code-coverage` to get how much code the tests cover:
+
 ```
 =============================== Coverage summary ===============================
 Statements   : 91.83% ( 45/49 )
