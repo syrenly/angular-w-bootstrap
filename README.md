@@ -1,8 +1,12 @@
 # AngularWBootstrap
 
-👋 Hi, I’m @syrenly and welcome to angular-w-bootstrap repo! This is sample app that uses Bootstrap framework, NgClass and NgStyle directives, class dynamic attributes, suffix operators, ngTemplateOutlet directive. No unit test implemented.
+👋 Hi, I’m @syrenly and welcome to angular-w-bootstrap repo! 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
+This is sample app that uses Bootstrap framework, NgClass and NgStyle directives, class dynamic attributes, suffix operators, inline styles.
+
+⚗️ Unit test implemented.
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2 and it is currently at version 17.3.1.
 
 ## Development server
 
