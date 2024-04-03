@@ -101,7 +101,7 @@ describe("AppComponent", (): void => {
 	});
 });
 
-function dispatchButtonEvent(index: number, fixture: ComponentFixture<unknown>): Promise<any> {
+function dispatchButtonEvent(index: number, fixture: ComponentFixture<unknown>): Promise<unknown> {
 	const buttons: DebugElement[] = fixture.debugElement.queryAll(By.css("button"));
 	const button: HTMLInputElement = buttons[index].nativeElement;
 	button.dispatchEvent(new Event("click"));
