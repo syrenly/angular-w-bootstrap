@@ -108,7 +108,7 @@ export class AppComponent {
 			case "danger": {
 				styles = {
 					backgroundColor: RED,
-					color: BLACK,
+					color: WHITE,
 					fontSize: "10px",
 				};
 
