@@ -2,7 +2,7 @@ import { DebugElement } from "@angular/core";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { By } from "@angular/platform-browser";
 import { AppComponent } from "./app.component";
-import { BLUE, WHITE } from "./consts";
+import { BLACK, BLUE, GREEN, RED, WHITE, YELLOW } from "./consts";
 import { blueRgb, greenRgb, redRgb, yellowRgb } from "./utils.mock";
 
 describe("AppComponent", (): void => {
@@ -106,6 +106,82 @@ describe("AppComponent", (): void => {
 			component.alert.type = "success";
 			classes = component.getClass();
 			expect(classes).toBe("my-alert success");
+		});
+	});
+	describe("should test #onChangeAlertType", (): void => {
+		it("case default", (): void => {
+			component["onChangeAlertType"]("unknown");
+			expect(component.alert).toEqual({
+				message: "Unknown status",
+				type: "unknown",
+				width: 200,
+				backgroundColor: "violet",
+				color: WHITE,
+			});
+		});
+		it("case primary", (): void => {
+			component["onChangeAlertType"]("primary");
+			expect(component.alert).toEqual({
+				type: "primary",
+				message: "Hello!",
+				width: 100,
+				backgroundColor: BLUE,
+				color: WHITE,
+			});
+		});
+		it("case danger", (): void => {
+			component["onChangeAlertType"]("danger");
+			expect(component.alert).toEqual({
+				type: "danger",
+				message: "Oh, no!",
+				width: 150,
+				backgroundColor: RED,
+				color: WHITE,
+			});
+		});
+		it("case success", (): void => {
+			component["onChangeAlertType"]("success");
+			expect(component.alert).toEqual({
+				type: "success",
+				message: "Oh, yeah!",
+				width: 200,
+				backgroundColor: GREEN,
+				color: BLACK,
+			});
+		});
+	});
+	describe("should test #onChangeStyles", (): void => {
+		it("case default", (): void => {
+			component["onChangeStyles"]("unknown");
+			expect(component.styles).toEqual({
+				backgroundColor: YELLOW,
+				color: WHITE,
+				fontSize: "100px",
+			});
+		});
+		it("case primary", (): void => {
+			component["onChangeStyles"]("primary");
+			expect(component.styles).toEqual({
+				backgroundColor: BLUE,
+				color: WHITE,
+				fontSize: "10px",
+			});
+		});
+		it("case danger", (): void => {
+			component["onChangeStyles"]("danger");
+			expect(component.styles).toEqual({
+				backgroundColor: RED,
+				color: WHITE,
+				fontSize: "10px",
+			});
+		});
+		it("case success", (): void => {
+			component["onChangeStyles"]("success");
+			expect(component.styles).toEqual({
+				backgroundColor: GREEN,
+				color: BLACK,
+				fontSize: "10px",
+			});
 		});
 	});
 });

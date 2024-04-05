@@ -26,14 +26,14 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ### Last code coverage
 
-Run `ng test --no-watch --code-coverage` to get how much code the tests cover:
+Run `ng test --no-watch --code-coverage` to get stats about the code coverage. Current:
 
 ```
 =============================== Coverage summary ===============================
-Statements   : 91.83% ( 45/49 )
-Branches     : 83.33% ( 10/12 )
+Statements   : 100% ( 49/49 )
+Branches     : 100% ( 12/12 )
 Functions    : 100% ( 6/6 )
-Lines        : 91.66% ( 44/48 )
+Lines        : 100% ( 48/48 )
 ================================================================================
 ```
 
