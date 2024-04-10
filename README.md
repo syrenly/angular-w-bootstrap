@@ -44,3 +44,36 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Docker
+
+Install docker in your machine. From the root folder of this application, run
+
+`docker compose up`
+
+It will need a couple of minutes to set up the container the first time. The following runs will be faster.
+The current Dockerfile is configured for live reloading. If you want to provide a production version of the application, change the Dockerfile from:
+
+```
+FROM node:20.9.0-alpine
+WORKDIR /app
+COPY package.json .
+RUN npm install
+COPY . .
+EXPOSE 4200 49153
+CMD npm run start
+```
+
+```
+FROM node:20.9.0-alpine AS build
+WORKDIR /app
+COPY . .
+RUN npm install
+RUN npm run build:prod
+# Serve Application using Nginx Server
+FROM nginx:alpine
+COPY --from=build /app/dist/project-name/ /usr/share/nginx/html
+EXPOSE 80
+```
+
+Remember to execute docker-compose build when you change the files docker-compose.yml or Dockerfile
