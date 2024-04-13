@@ -49,31 +49,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 Install docker in your machine. From the root folder of this application, run
 
-`docker compose up`
+`docker build -t angular-w-bootstrap:latest .`
 
 It will need a couple of minutes to set up the container the first time. The following runs will be faster.
-The current Dockerfile is configured for live reloading. If you want to provide a production version of the application, change the Dockerfile from:
+The current Dockerfile is configured for a prod build. To access the application on port _4200_, you need to run the image:
 
-```
-FROM node:20.9.0-alpine
-WORKDIR /app
-COPY package.json .
-RUN npm install
-COPY . .
-EXPOSE 4200 49153
-CMD npm run start
-```
-
-```
-FROM node:20.9.0-alpine AS build
-WORKDIR /app
-COPY . .
-RUN npm install
-RUN npm run build:prod
-# Serve Application using Nginx Server
-FROM nginx:alpine
-COPY --from=build /app/dist/project-name/ /usr/share/nginx/html
-EXPOSE 80
-```
-
-Remember to execute docker-compose build when you change the files docker-compose.yml or Dockerfile
+`docker run -p 4200:80 angular-w-bootstrap`
