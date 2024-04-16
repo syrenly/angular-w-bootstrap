@@ -4,21 +4,32 @@
 
 This is sample app that uses Bootstrap framework, NgClass and NgStyle directives, class dynamic attributes, suffix operators, inline styles.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2 and it is currently at version 17.3.1.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2 and it is currently at version 17.4.1
 
 ⚗️ Unit test implemented.
+
+The current implementation uses Bootstrap 5 through npm package. If you want to use the cdn link instead, then uninstall the package running the command `npm uninstall bootstrap`; then, go to [index.html](./src/index.html) and uncomment the following code:
+
+```
+<link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+	integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+	crossorigin="anonymous"
+/>
+```
+
+If you need a different version of Bootstrap, remember to recreate the hash of the integrity attribute (or remove entirely the that attribute, in couple with crossorigin. It is not suggested 👮; every external link/source should be always safe and validated).
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+Run `npm build:prod` to build in production the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Running unit tests
 
@@ -26,7 +37,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ### Last code coverage
 
-Run `ng test --no-watch --code-coverage` to get stats about the code coverage. Current:
+Run `npm run test:coverage` to get stats about the code coverage. Current:
 
 ```
 =============================== Coverage summary ===============================
@@ -37,14 +48,6 @@ Lines        : 100% ( 48/48 )
 ================================================================================
 ```
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
 ## Docker
 
 Install docker in your machine. From the root folder of this application, run
@@ -52,6 +55,5 @@ Install docker in your machine. From the root folder of this application, run
 `docker build -t angular-w-bootstrap:latest .`
 
 It will need a couple of minutes to set up the container the first time. The following runs will be faster.
-The current Dockerfile is configured for a prod build. To access the application on port _4200_, you need to run the image:
 
-`docker run -p 4200:80 angular-w-bootstrap`
+Run `docker-compose up`
