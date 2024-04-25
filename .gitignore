@@ -30,18 +30,15 @@ yarn-error.log
 .vscode
 
 # Miscellaneous
-/.angular/cache
+.angular/
 .sass-cache/
 /connect.lock
 /coverage
 /libpeerconnection.log
 testem.log
 /typings
+.nx/
 
 # System files
 .DS_Store
 Thumbs.db
-
-# Angular Cache
-.angular
-

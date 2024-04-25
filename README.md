@@ -1,6 +1,6 @@
 # AngularWBootstrap
 
-👋 Hi, I’m @syrenly and welcome to angular-w-bootstrap repo!
+👋 Hi, I’m **syrenly** and welcome to **angular-w-bootstrap** repo!
 
 This is sample app that uses Bootstrap framework, NgClass and NgStyle directives, class dynamic attributes, suffix operators, inline styles.
 
@@ -47,6 +47,14 @@ Functions    : 100% ( 6/6 )
 Lines        : 100% ( 48/48 )
 ================================================================================
 ```
+
+## Lint
+
+Run `ng lint` to run the Angular lint.
+
+Run `npm run eslint` to run the ES lint.
+
+Run `npm run eslint:fix` to run the ES lint and apply fixes.
 
 ## Docker
 
