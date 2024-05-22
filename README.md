@@ -2,9 +2,9 @@
 
 👋 Hi, I’m **syrenly** and welcome to **angular-w-bootstrap** repo!
 
-This is sample app that uses Bootstrap framework, NgClass and NgStyle directives, class dynamic attributes, suffix operators, inline styles.
+This is sample app that uses Bootstrap 5 framework, NgClass and NgStyle directives, class dynamic attributes, suffix operators, inline styles.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17 and upgraded to version 18
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17 and upgraded to version 18.
 
 ⚗️ Unit test implemented.
 
