@@ -4,7 +4,7 @@
 
 This is sample app that uses Bootstrap framework, NgClass and NgStyle directives, class dynamic attributes, suffix operators, inline styles.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2 and it is currently at version 17.3.1
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17 and upgraded to version 18
 
 ⚗️ Unit test implemented.
 
@@ -65,3 +65,7 @@ Install docker in your machine. From the root folder of this application, run
 It will need a couple of minutes to set up the container the first time. The following runs will be faster.
 
 Run `docker-compose up`
+
+## Branches
+
+-   [ng-17](https://github.com/syrenly/angular-w-bootstrap/tree/ng-17) Implementation with Angular 17
