@@ -1,35 +1,49 @@
-<h3>Styles And Bootstrap - Sample</h3>
-<div class="mb-3">
-	📖 More about NgClass and NgStyle:
+<h1>Styles And Bootstrap - Sample</h1>
+<p>Sample application to show how to use NgClass and NgStyle directives, also with Bootstrap classes.</p>
+<p class="mb-3">
+	<span aria-hidden="true">📖</span>
+	&nbsp;More about NgClass and NgStyle:
 	<a
 		href="https://codecraft.tv/courses/angular/built-in-directives/ngstyle-and-ngclass/"
+		aria-label="More about NgClass and NgStyle"
 		target="_blank">
 		ngstyle-and-ngclass
 	</a>
-</div>
+</p>
 <div class="d-flex align-items-center justify-content-start">
-	<span>Click the buttons below to change the alert type:&nbsp;</span>
-	<button
-		type="button"
-		class="me-3"
-		(click)="onClickButton('primary')">
-		Primary
-	</button>
-	<button
-		type="button"
-		class="me-3"
-		(click)="onClickButton('danger')">
-		Danger
-	</button>
-	<button
-		type="button"
-		class="me-3"
-		(click)="onClickButton('success')">
-		Success
-	</button>
+	<p>Click the following buttons to change the alert type</p>
+	<ul class="d-flex align-items-center justify-content-start gap-10">
+		<li>
+			<button
+				type="button"
+				class="me-3"
+				aria-label="Click to set primary alerts"
+				(click)="onClickButton('primary')">
+				Primary
+			</button>
+		</li>
+		<li>
+			<button
+				type="button"
+				class="me-3"
+				aria-label="Click to set danger alerts"
+				(click)="onClickButton('danger')">
+				Danger
+			</button>
+		</li>
+		<li>
+			<button
+				type="button"
+				class="me-3"
+				aria-label="Click to set success alerts"
+				(click)="onClickButton('success')">
+				Success
+			</button>
+		</li>
+	</ul>
 </div>
 
-<h4 class="mt-3">Dynamic class names</h4>
+<h2 class="mt-3">Dynamic class names</h2>
 <div
 	class="my-alert dynamic-class-name"
 	[class.danger]="alert.type === 'danger'"
@@ -38,7 +52,7 @@
 	{{ alert.message }}
 </div>
 
-<h4 class="mt-3">Dynamic attribute class</h4>
+<h2 class="mt-3">Dynamic attribute class</h2>
 <!--
 	This case is not suggested, since every mouse/keyboard event triggers change detection and the evaluation of
 	the getClass method
@@ -49,36 +63,42 @@
 	{{ alert.message }}
 </div>
 
-<h4 class="mt-3">NgClass</h4>
+<h2 class="mt-3">NgClass</h2>
 <!-- NgClass is a Directive that should be imported in the "imports" array in the metadata. If more conditions
 	are satisfied, the relative classes will be applied together; in case of overlapping of styles, the one with
 	more SPECIFICITY will be applied over the others. More about specificity concept: -->
 
 <div>SPECIFICITY documentation:</div>
-<li>
-	📖
-	<a
-		href="https://www.w3schools.com/css/css_specificity.asp"
-		target="_blank">
-		w3schools
-	</a>
-</li>
-<li>
-	📖
-	<a
-		href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity"
-		target="_blank">
-		developer.mozilla
-	</a>
-</li>
-<li>
-	📖
-	<a
-		href="https://css-tricks.com/specifics-on-css-specificity/"
-		target="_blank">
-		css-tricks
-	</a>
-</li>
+<ul>
+	<li>
+		<span aria-hidden="true">📖</span>
+		<a
+			href="https://www.w3schools.com/css/css_specificity.asp"
+			aria-label="Go to w3schools site"
+			target="_blank">
+			w3schools
+		</a>
+	</li>
+	<li>
+		<span aria-hidden="true">📖</span>
+		<a
+			href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity"
+			aria-label="Go to developer.mozilla site"
+			target="_blank">
+			developer.mozilla
+		</a>
+	</li>
+	<li>
+		<span aria-hidden="true">📖</span>
+		<a
+			href="https://css-tricks.com/specifics-on-css-specificity/"
+			aria-label="Go to css-tricks site"
+			target="_blank">
+			css-tricks
+		</a>
+	</li>
+</ul>
+
 <div
 	class="my-alert ng-class"
 	[ngClass]="{
@@ -89,7 +109,7 @@
 	{{ alert.message }}
 </div>
 
-<h4 class="mt-3">Inline styles</h4>
+<h2 class="mt-3">Inline styles</h2>
 <!--
 	The directive style can be concatenate with css properties and bounded to a property through data binding.
 	Sometimes, the single css property is not enough, as in the case of fontSize, width, etc, where a unit of
@@ -104,14 +124,14 @@
 	{{ alert.message }}
 </div>
 
-<h4 class="mt-3">NgStyle</h4>
+<h2 class="mt-3">NgStyle</h2>
 <div
 	class="my-alert ng-styles"
 	[ngStyle]="styles">
 	{{ alert.message }}
 </div>
 
-<h4 class="mt-3">Use Bootstrap Classes</h4>
+<h2 class="mt-3">Use Bootstrap Classes</h2>
 <div
 	class="alert"
 	[ngClass]="{
