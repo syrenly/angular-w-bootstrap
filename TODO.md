@@ -1,3 +1,4 @@
 # TODO
 
-[ ] Update @angular-eslint/schematics to version 18
+[x] Update @angular-eslint/schematics to version 18
+[ ] Add accessibility
