@@ -71,3 +71,4 @@ Run `docker-compose up`
 - [ng-17](https://github.com/syrenly/angular-w-bootstrap/tree/ng-17) Implementation with Angular 17
 - [ng-18](https://github.com/syrenly/angular-w-bootstrap/tree/ng-18) Implementation with Angular 18
 - [ng-19](https://github.com/syrenly/angular-w-bootstrap/tree/ng-19) Implementation with Angular 19
+- [ng-20](https://github.com/syrenly/angular-w-bootstrap/tree/ng-20) Implementation with Angular 20
