@@ -4,11 +4,10 @@ import { BLACK, BLUE, DEFAULT_ALERT, DEFAULT_STYLE, GREEN, RED, WHITE, YELLOW } 
 import { AlertType, IAlert, IAlertStyle } from "./types";
 
 @Component({
-	selector: "app-root",
-	standalone: true,
-	imports: [NgClass, NgStyle],
-	templateUrl: "app.component.html",
-	styleUrl: "app.component.scss",
+    selector: "app-root",
+    imports: [NgClass, NgStyle],
+    templateUrl: "app.component.html",
+    styleUrl: "app.component.scss"
 })
 export class AppComponent {
 	/**	The alert to be shown */
